@@ -1,0 +1,21 @@
+{
+  "name": "nexatech-realtime-notification-system",
+  "version": "1.0.0",
+  "description": "Distributed real-time notification system using Socket.IO and Redis for CSC2883 final assignment.",
+  "main": "server1.js",
+  "type": "commonjs",
+  "scripts": {
+    "server1": "node server1.js",
+    "server2": "node server2.js",
+    "dev": "concurrently \"node server1.js\" \"node server2.js\""
+  },
+  "keywords": ["websocket", "redis", "distributed-system", "socket.io"],
+  "author": "CSC2883 Student",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.2.1",
+    "express": "^5.2.1",
+    "redis": "^5.10.0",
+    "socket.io": "^4.8.3"
+  }
+}
