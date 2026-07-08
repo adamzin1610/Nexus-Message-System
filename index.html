@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaTech Real-Time Notification System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-glow"></div>
+
+    <main class="app-shell">
+        <section class="hero-card">
+            <div>
+                <p class="eyebrow">NexaTech College</p>
+                <h1>NexaTech College Notification Hub</h1>
+                <p class="subtitle">Lecturers send announcements instantly. Students receive real-time notifications and respond across multiple servers.</p>
+            </div>
+            <div class="server-pill" id="serverDisplay">Connecting...</div>
+        </section>
+
+        <section class="grid-layout">
+            <aside class="panel login-panel">
+                <h2>User Access</h2>
+                <label for="username">Username</label>
+                <input id="username" type="text" placeholder="Example: Myanz / Mr Adam">
+
+                <label for="role">Role</label>
+                <select id="role">
+                    <option value="Student">Student</option>
+                    <option value="Lecturer">Lecturer</option>
+                </select>
+
+                <button id="joinBtn" class="primary-btn">Join System</button>
+
+                <div class="status-box">
+                    <span class="status-dot" id="statusDot"></span>
+                    <div>
+                        <strong id="connectionStatus">Disconnected</strong>
+                        <p id="failoverText">Waiting for server connection.</p>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="panel chat-panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Real-Time Messages</h2>
+                        <p>Announcements and responses appear with automatic date and timestamp.</p>
+                    </div>
+                    <button id="clearBtn" class="ghost-btn">Clear Screen</button>
+                </div>
+
+                <div id="messages" class="messages"></div>
+
+                <div class="composer">
+                    <select id="messageType">
+                        <option value="announcement">Announcement</option>
+                        <option value="response">Response</option>
+                    </select>
+                    <input id="messageInput" type="text" placeholder="Type announcement or response..." disabled>
+                    <button id="sendBtn" class="send-btn" disabled>Send</button>
+                </div>
+                <p class="hint" id="roleHint">Join first. Lecturers can send announcements and responses. Students can send responses.</p>
+            </section>
+
+            <aside class="panel users-panel">
+                <h2>Connected Users</h2>
+                <p class="small-text">This list updates across Server 1 and Server 2 using Redis.</p>
+                <div id="users" class="users"></div>
+            </aside>
+        </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

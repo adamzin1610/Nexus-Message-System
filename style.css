@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f8fbff;
+    background: radial-gradient(circle at top left, #073b87 0, transparent 32%),
+                radial-gradient(circle at bottom right, #b00020 0, transparent 35%),
+                #05070d;
+}
+
+.background-glow {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(13, 110, 253, 0.18), rgba(255, 0, 64, 0.12));
+    pointer-events: none;
+}
+
+.app-shell {
+    position: relative;
+    width: min(1200px, 94%);
+    margin: 0 auto;
+    padding: 32px 0;
+}
+
+.hero-card,
+.panel {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(5, 7, 13, 0.86);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+}
+
+.hero-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 30px;
+    margin-bottom: 22px;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: #4dabff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    font-size: 12px;
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: clamp(30px, 4vw, 52px);
+    line-height: 1;
+}
+
+h2 {
+    margin-bottom: 16px;
+}
+
+.subtitle,
+.small-text,
+.hint,
+.panel-header p {
+    color: #aeb9cc;
+}
+
+.server-pill {
+    padding: 14px 20px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #005cff, #d00032);
+    color: white;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 270px 1fr 270px;
+    gap: 22px;
+}
+
+.panel {
+    padding: 22px;
+}
+
+label {
+    display: block;
+    margin: 14px 0 8px;
+    color: #dbe7ff;
+    font-weight: 700;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    border: 0;
+    border-radius: 14px;
+    padding: 13px 14px;
+    font-size: 15px;
+}
+
+input,
+select {
+    color: white;
+    background: #0f1729;
+    outline: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #188cff;
+}
+
+button {
+    cursor: pointer;
+    color: white;
+    font-weight: 800;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.primary-btn,
+.send-btn {
+    margin-top: 18px;
+    background: linear-gradient(135deg, #006dff, #e50936);
+}
+
+.ghost-btn {
+    width: auto;
+    background: #151e34;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.status-box {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+    padding: 14px;
+    background: #0f1729;
+    border-radius: 16px;
+}
+
+.status-dot {
+    width: 14px;
+    height: 14px;
+    margin-top: 4px;
+    flex: 0 0 14px;
+    border-radius: 50%;
+    background: #ff375f;
+    box-shadow: 0 0 18px #ff375f;
+}
+
+.status-dot.online {
+    background: #19d27f;
+    box-shadow: 0 0 18px #19d27f;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.messages {
+    height: 430px;
+    overflow-y: auto;
+    padding: 12px;
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.message-card {
+    margin-bottom: 12px;
+    padding: 14px;
+    border-left: 5px solid #188cff;
+    border-radius: 14px;
+    background: #101829;
+}
+
+.message-card.announcement {
+    border-left-color: #ff1744;
+}
+
+.message-card.system {
+    border-left-color: #8da2c7;
+    opacity: 0.85;
+}
+
+.message-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+    color: #8fb9ff;
+    font-size: 13px;
+}
+
+.message-text {
+    margin: 0;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+.composer {
+    display: grid;
+    grid-template-columns: 170px 1fr 110px;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.composer .send-btn {
+    margin-top: 0;
+}
+
+.users {
+    display: grid;
+    gap: 10px;
+}
+
+.user-card {
+    padding: 13px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(0, 109, 255, 0.22), rgba(229, 9, 54, 0.16));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-card strong {
+    display: block;
+}
+
+.user-card span {
+    color: #b7c7df;
+    font-size: 13px;
+}
+
+@media (max-width: 950px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card,
+    .panel-header,
+    .composer {
+        display: block;
+    }
+
+    .server-pill,
+    .composer input,
+    .composer button,
+    .composer select {
+        margin-top: 10px;
+    }
+}
